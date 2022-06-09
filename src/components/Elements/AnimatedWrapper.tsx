@@ -4,8 +4,7 @@ import React, { FunctionComponent, PropsWithChildren } from 'react'
 const MARGIN = '-50%'
 
 const transition: Transition = {
-  duration: 0.5,
-  delay: 0.2,
+  duration: 0.75,
   ease: 'easeInOut',
 }
 
@@ -14,20 +13,16 @@ const AnimatedWrapper: FunctionComponent<PropsWithChildren> = ({
 }) => {
   return (
     <motion.div
-      initial={{ padding: '1rem' }}
-      whileInView={{ padding: 0 }}
+      initial={{ borderRadius: '30px', scale: 0.95, y: 0, z: 0 }}
+      whileInView={{ borderRadius: 0, scale: 1, y: '7.5vh', z: 10 }}
       viewport={{ amount: 0.8 }}
       transition={transition}
+      style={{
+        overflow: 'hidden',
+        position: 'relative',
+      }}
     >
-      <motion.div
-        initial={{ borderRadius: '30px' }}
-        whileInView={{ borderRadius: 0 }}
-        viewport={{ amount: 0.8 }}
-        transition={transition}
-        style={{ overflow: 'hidden' }}
-      >
-        {children}
-      </motion.div>
+      {children}
     </motion.div>
   )
 }

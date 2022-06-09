@@ -22,7 +22,7 @@ const AnimatedText: FunctionComponent<IAnimatedTextProps> = ({ text }) => {
           key={`${word}-${index}`}
           initial="hidden"
           whileInView="shown"
-          viewport={{ margin: `0px 0px -${25 + index * 3}% 0px` }}
+          viewport={{ margin: `0px 0px -${20 + index * 3}% 0px` }}
           transition={{ duration: 0.1 }}
           variants={variants}
         >
