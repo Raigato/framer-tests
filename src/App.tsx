@@ -1,10 +1,10 @@
 import './App.css'
-import Home from './views/Home'
+import FilterView from './views/Filter'
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <FilterView />
     </div>
   )
 }
